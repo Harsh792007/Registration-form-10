@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Algebraic Operations</title>
+    <style>
+        body {
+            font-family: Arial;
+            text-align: center;
+            margin-top: 50px;
+        }
+        input, button {
+            padding: 10px;
+            margin: 5px;
+        }
+        #result {
+            font-size: 20px;
+            margin-top: 15px;
+            color: blue;
+        }
+    </style>
+</head>
+<body>
+
+    <h2>Algebraic Operations Calculator</h2>
+
+    <input type="number" id="num1" placeholder="Enter first number">
+    <input type="number" id="num2" placeholder="Enter second number">
+    <br>
+
+    <button onclick="add()">Add</button>
+    <button onclick="subtract()">Subtract</button>
+    <button onclick="multiply()">Multiply</button>
+    <button onclick="divide()">Divide</button>
+
+    <div id="result"></div>
+
+    <script>
+        function getValues() {
+            let a = parseFloat(document.getElementById("num1").value);
+            let b = parseFloat(document.getElementById("num2").value);
+            return [a, b];
+        }
+
+        function add() {
+            let [a, b] = getValues();
+            document.getElementById("result").innerText = "Result: " + (a + b);
+        }
+
+        function subtract() {
+            let [a, b] = getValues();
+            document.getElementById("result").innerText = "Result: " + (a - b);
+        }
+
+        function multiply() {
+            let [a, b] = getValues();
+            document.getElementById("result").innerText = "Result: " + (a * b);
+        }
+
+        function divide() {
+            let [a, b] = getValues();
+            if (b === 0) {
+                document.getElementById("result").innerText = "Cannot divide by zero!";
+            } else {
+                document.getElementById("result").innerText = "Result: " + (a / b);
+            }
+        }
+    </script>
+
+</body>
+</html>
